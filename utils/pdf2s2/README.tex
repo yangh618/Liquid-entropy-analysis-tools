@@ -1,0 +1,91 @@
+% Created 2023-04-27 Thu 13:00
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Yang Huang}
+\date{\textit{<2023-04-27 Thu>}}
+\title{README}
+\hypersetup{
+ pdfauthor={Yang Huang},
+ pdftitle={README},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.5.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Purpose}
+\label{sec:org0717de3}
+Calculate two-body entropy from pair correlation function.
+
+\section{Dependency}
+\label{sec:orgce73abd}
+GSL - GNU Scientific Library is required. In general, it is installed
+by default in Linux operating systems. Or you can refer to \href{https://www.gnu.org/software/gsl/}{GSL
+website}.
+
+\section{Compilation}
+\label{sec:org5f823e5}
+Type "make" and it will generate a "pdf2s2\_v2" binary.
+
+\section{Usage}
+\label{sec:org414e2c1}
+"pdf2s2\_v2 -x XDATCAR" for calculation or "pdf2s2\_v2 -h" for help page.
+
+\subsection{Input files}
+\label{sec:orga23d22c}
+\begin{enumerate}
+\item Mass
+This file contains three rows:
+\begin{itemize}
+\item type of species.
+\item atomic numbers.
+\item atomic masses [a.u.] in atomic units.
+\end{itemize}
+
+\item Trun
+This file contains in value which is the temperature of MD simulation.
+
+\item XDATCAR
+Standard output of VASP runs.
+
+\item pdf files
+Pair distribution functions. You can generate those using "pdfxdat"
+command.
+\end{enumerate}
+
+\subsection{Output files}
+\label{sec:orgac755e3}
+\begin{enumerate}
+\item pdf.??.s2
+Two-body entropy as a function of integral distance of each kind of
+pair in a form of
+\begin{center}
+\begin{tabular}{llll}
+R [A] & S2(fluct) [kB] & S2(info) [kB] & S2(tot) [kB]\\
+\end{tabular}
+\end{center}
+
+\item tot.s2
+Total two-body entropy as a function of integral distance  a form of
+\begin{center}
+\begin{tabular}{llll}
+R [A] & S2(fluct) [kB] & S2(info) [kB] & S2(tot) [kB]\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{document}
