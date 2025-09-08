@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# install 2-point entropy tools
+cd utils/pdfxdat_cubic/
+make cleanall
+make
+cp pdfxdat_cubic ../../bin/
+cd -
+
+cd utils/pdf2s2
+make clean
+make
+cp pdf2s2_v2 ../../bin/
+cd -
+
+
+# install 3-point entropy tools
+cd utils/3bdfxdat/
+./install.sh
+cd -
+

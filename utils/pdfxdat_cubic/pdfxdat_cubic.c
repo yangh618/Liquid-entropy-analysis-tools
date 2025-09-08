@@ -80,9 +80,9 @@ int main(){
 	  y = sites[i][1]-sites[j][1];
 	  z = sites[i][2]-sites[j][2];
 
-	  if ( x > 0.5 ) x--; if (x<-0.5) x++;
-	  if ( y > 0.5 ) y--; if (y<-0.5) y++;
-	  if ( z > 0.5 ) z--; if (z<-0.5) z++;
+	  while ( x > 0.5 ) x--; while (x<-0.5) x++;
+	  while ( y > 0.5 ) y--; while (y<-0.5) y++;
+	  while ( z > 0.5 ) z--; while (z<-0.5) z++;
 
 	  r = sqrt(x*x*a*a +y*y*b*b +z*z*c*c);
 	  //printf("%lf\n", floor(r*100));

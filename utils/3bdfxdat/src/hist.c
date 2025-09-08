@@ -283,9 +283,9 @@ int Xdat2Hist(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec1[0] = slist[j][0]-slist[i][0];
 	vec1[1] = slist[j][1]-slist[i][1];
 	vec1[2] = slist[j][2]-slist[i][2];
-	if (vec1[0] > 0.5) vec1[0]--; if (vec1[0]< -0.5) vec1[0]++;
-	if (vec1[1] > 0.5) vec1[1]--; if (vec1[1]< -0.5) vec1[1]++;
-	if (vec1[2] > 0.5) vec1[2]--; if (vec1[2]< -0.5) vec1[2]++;
+	while (vec1[0] > 0.5) vec1[0]--; while (vec1[0]< -0.5) vec1[0]++;
+	while (vec1[1] > 0.5) vec1[1]--; while (vec1[1]< -0.5) vec1[1]++;
+	while (vec1[2] > 0.5) vec1[2]--; while (vec1[2]< -0.5) vec1[2]++;
 	pos1[0] = a1*vec1[0]+b1*vec1[1]+ c1*vec1[2];
 	pos1[1] = a2*vec1[0]+b2*vec1[1]+ c2*vec1[2];
 	pos1[2] = a3*vec1[0]+b3*vec1[1]+ c3*vec1[2];
@@ -295,9 +295,9 @@ int Xdat2Hist(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec2[0] = slist[k][0]-slist[j][0];
 	vec2[1] = slist[k][1]-slist[j][1];
 	vec2[2] = slist[k][2]-slist[j][2];
-	if (vec2[0] > 0.5) vec2[0]--; if (vec2[0]< -0.5) vec2[0]++;
-	if (vec2[1] > 0.5) vec2[1]--; if (vec2[1]< -0.5) vec2[1]++;
-	if (vec2[2] > 0.5) vec2[2]--; if (vec2[2]< -0.5) vec2[2]++;
+	while (vec2[0] > 0.5) vec2[0]--; while (vec2[0]< -0.5) vec2[0]++;
+	while (vec2[1] > 0.5) vec2[1]--; while (vec2[1]< -0.5) vec2[1]++;
+	while (vec2[2] > 0.5) vec2[2]--; while (vec2[2]< -0.5) vec2[2]++;
 	
 	pos2[0] = a1*vec2[0]+b1*vec2[1]+ c1*vec2[2];
 	pos2[1] = a2*vec2[0]+b2*vec2[1]+ c2*vec2[2];
@@ -308,9 +308,9 @@ int Xdat2Hist(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec3[0] = slist[i][0]-slist[k][0];
 	vec3[1] = slist[i][1]-slist[k][1];
 	vec3[2] = slist[i][2]-slist[k][2];
-	if (vec3[0] > 0.5) vec3[0]--; if (vec3[0]< -0.5) vec3[0]++;
-	if (vec3[1] > 0.5) vec3[1]--; if (vec3[1]< -0.5) vec3[1]++;
-	if (vec3[2] > 0.5) vec3[2]--; if (vec3[2]< -0.5) vec3[2]++;
+	while (vec3[0] > 0.5) vec3[0]--; while (vec3[0]< -0.5) vec3[0]++;
+	while (vec3[1] > 0.5) vec3[1]--; while (vec3[1]< -0.5) vec3[1]++;
+	while (vec3[2] > 0.5) vec3[2]--; while (vec3[2]< -0.5) vec3[2]++;
 	pos3[0] = a1*vec3[0]+b1*vec3[1]+ c1*vec3[2];
 	pos3[1] = a2*vec3[0]+b2*vec3[1]+ c2*vec3[2];
 	pos3[2] = a3*vec3[0]+b3*vec3[1]+ c3*vec3[2];
@@ -394,9 +394,9 @@ int Xdat2Hist_NeighList(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec1[0] = slist[j][0]-slist[i][0];
 	vec1[1] = slist[j][1]-slist[i][1];
 	vec1[2] = slist[j][2]-slist[i][2];
-	if (vec1[0] > 0.5) vec1[0]--; if (vec1[0]< -0.5) vec1[0]++;
-	if (vec1[1] > 0.5) vec1[1]--; if (vec1[1]< -0.5) vec1[1]++;
-	if (vec1[2] > 0.5) vec1[2]--; if (vec1[2]< -0.5) vec1[2]++;
+	while (vec1[0] > 0.5) vec1[0]--; while (vec1[0]< -0.5) vec1[0]++;
+	while (vec1[1] > 0.5) vec1[1]--; while (vec1[1]< -0.5) vec1[1]++;
+	while (vec1[2] > 0.5) vec1[2]--; while (vec1[2]< -0.5) vec1[2]++;
 	pos1[0] = a1*vec1[0]+b1*vec1[1]+ c1*vec1[2];
 	pos1[1] = a2*vec1[0]+b2*vec1[1]+ c2*vec1[2];
 	pos1[2] = a3*vec1[0]+b3*vec1[1]+ c3*vec1[2];
@@ -427,9 +427,9 @@ int Xdat2Hist_NeighList(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec1[0] = slist[j][0]-slist[i][0];
 	vec1[1] = slist[j][1]-slist[i][1];
 	vec1[2] = slist[j][2]-slist[i][2];
-	if (vec1[0] > 0.5) vec1[0]--; if (vec1[0]< -0.5) vec1[0]++;
-	if (vec1[1] > 0.5) vec1[1]--; if (vec1[1]< -0.5) vec1[1]++;
-	if (vec1[2] > 0.5) vec1[2]--; if (vec1[2]< -0.5) vec1[2]++;
+	while (vec1[0] > 0.5) vec1[0]--; while (vec1[0]< -0.5) vec1[0]++;
+	while (vec1[1] > 0.5) vec1[1]--; while (vec1[1]< -0.5) vec1[1]++;
+	while (vec1[2] > 0.5) vec1[2]--; while (vec1[2]< -0.5) vec1[2]++;
 	pos1[0] = a1*vec1[0]+b1*vec1[1]+ c1*vec1[2];
 	pos1[1] = a2*vec1[0]+b2*vec1[1]+ c2*vec1[2];
 	pos1[2] = a3*vec1[0]+b3*vec1[1]+ c3*vec1[2];
@@ -439,9 +439,9 @@ int Xdat2Hist_NeighList(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec2[0] = slist[k][0]-slist[j][0];
 	vec2[1] = slist[k][1]-slist[j][1];
 	vec2[2] = slist[k][2]-slist[j][2];
-	if (vec2[0] > 0.5) vec2[0]--; if (vec2[0]< -0.5) vec2[0]++;
-	if (vec2[1] > 0.5) vec2[1]--; if (vec2[1]< -0.5) vec2[1]++;
-	if (vec2[2] > 0.5) vec2[2]--; if (vec2[2]< -0.5) vec2[2]++;
+	while (vec2[0] > 0.5) vec2[0]--; while (vec2[0]< -0.5) vec2[0]++;
+	while (vec2[1] > 0.5) vec2[1]--; while (vec2[1]< -0.5) vec2[1]++;
+	while (vec2[2] > 0.5) vec2[2]--; while (vec2[2]< -0.5) vec2[2]++;
 	
 	pos2[0] = a1*vec2[0]+b1*vec2[1]+ c1*vec2[2];
 	pos2[1] = a2*vec2[0]+b2*vec2[1]+ c2*vec2[2];
@@ -452,9 +452,9 @@ int Xdat2Hist_NeighList(char *fxyz, xdat_p_t xdat, hist_p_t hist){
 	vec3[0] = slist[i][0]-slist[k][0];
 	vec3[1] = slist[i][1]-slist[k][1];
 	vec3[2] = slist[i][2]-slist[k][2];
-	if (vec3[0] > 0.5) vec3[0]--; if (vec3[0]< -0.5) vec3[0]++;
-	if (vec3[1] > 0.5) vec3[1]--; if (vec3[1]< -0.5) vec3[1]++;
-	if (vec3[2] > 0.5) vec3[2]--; if (vec3[2]< -0.5) vec3[2]++;
+	while (vec3[0] > 0.5) vec3[0]--; while (vec3[0]< -0.5) vec3[0]++;
+	while (vec3[1] > 0.5) vec3[1]--; while (vec3[1]< -0.5) vec3[1]++;
+	while (vec3[2] > 0.5) vec3[2]--; while (vec3[2]< -0.5) vec3[2]++;
 	pos3[0] = a1*vec3[0]+b1*vec3[1]+ c1*vec3[2];
 	pos3[1] = a2*vec3[0]+b2*vec3[1]+ c2*vec3[2];
 	pos3[2] = a3*vec3[0]+b3*vec3[1]+ c3*vec3[2];
