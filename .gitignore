@@ -41,5 +41,4 @@
 *.dwo
 
 # examples and bin directory
-examples
 bin

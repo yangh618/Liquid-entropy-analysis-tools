@@ -1,0 +1,76 @@
+#!/bin/bash
+#SBATCH -p debug
+#SBATCH --ntasks=24
+#SBATCH --mem=200G
+
+export SLURM_TASKS_PER_NODE=$SLURM_CPUS_ON_NODE
+
+#  Execute [MODIFY COMPLETELY TO YOUR NEEDS]
+# ============================================
+
+# -----------------------------------------------
+# define your histogram
+rmin=2.1			# non-zero pdf distance based on pdf.GeGe 
+rmax=5.5			# 1/4 of the box size
+dr=0.02				# bin size
+# -----------------------------------------------
+
+# -----------------------------------------------
+# divided "nsample" XDATCAR into "njobs" jobs each has "nxdat" files
+ninit=0			# remove the first 1000 inital structures
+nsamples=10000
+njobs=20
+nxdat=500
+# -----------------------------------------------
+
+date > RunAt
+hostname >> RunAt
+echo running in `pwd` >> RunAt
+
+if ! [ -f POSCAR ]
+then 
+    head -n 520 XDATCAR  > POSCAR # POSCAR is necessary for init_bin.sh command
+fi
+init_bins.sh $rmin $rmax $dr
+cat XDATCAR | split_xdat.awk
+
+status=3bdfxdat.status
+rm $status;
+touch $status;
+
+for i in `seq 0 1 $njobs`;
+do
+    if [ $i -eq $njobs ];
+    then
+	break;
+    fi
+    
+    nstart=$(( $i*$nxdat+1 +$ninit ))
+    nend=$(( ($i+1)*$nxdat +$ninit ))
+    echo $nstart $nend >> 3bdfxdat_bundle.sh.out
+    3bdfxdat_bundle.sh $nstart $nend $nstart >> $status &
+done
+
+while true;
+do
+    sleep 3;
+    ans=`grep DONE $status | wc -l`;
+    if [ $ans -eq $njobs ];
+    then
+	break;
+    fi
+done
+
+echo Done `date` >> RunAt
+sleep 10
+rm xdat_cut*
+rm run_dir* -r
+
+if [ -f 3bdf_bins.dat-sum ];
+then
+    rm 3bdf_bins.dat-sum
+fi
+
+3bdfxdat_sum 3bdf_bins.dat-sum 3bdf_bins.dat_*
+rm 3bdf_bins.dat_*
+3bdf2s3 3bdf_bins.dat-sum 2
