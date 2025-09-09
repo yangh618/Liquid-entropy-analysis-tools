@@ -1,0 +1,30 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil expand-links:t f:t
+#+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
+#+title: Liquid-entropy-analysis-tools (LEAT)
+#+date: <2025-09-08 Mon>
+#+author: Huang Yang
+#+email: huangyang@fedora
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 30.1 (Org mode 9.7.11)
+#+cite_export:
+
+Liquid-entropy-analysis-tools (LEAT) is package for analyzing entropy in liquid systems, including tools for  calculating pair distribution function (PDF), 3-body distribution function (3BDF), two-body entropy (S2), three-body entropy (S3), etc. It requires input and output files in VASP: INCAR, OUTCAR, POTCAR and XDATCAR.
+
+It requires GNU Scientific Library (GSL), which, in general, is installed by default in Linux operating systems. Or you can refer to [[https://www.gnu.org/software/gsl/][GSL website]].
+
+To install, 
+#+begin_src bash
+  git clone https://github.com/yangh618/Liquid-entropy-analysis-tools.git
+  cd Liquid-entropy-analysis-tools
+  ./install
+#+end_src
+After compilation, all utilities will be available in the bin/ directory. To use them conveniently, either add bin/ to your PATH, or  create symbolic links to the binaries from a directory already in your PATH.
+
+You can try out the examples located in the examples/ directory. For detailed usage of each command, please refer to the README file in the corresponding directory in utils/.
+
+
