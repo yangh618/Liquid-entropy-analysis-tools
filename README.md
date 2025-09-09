@@ -16,7 +16,7 @@ If you are using 3BDF tools, please cite
 
 > Huang, Y. and Widom, M., 2024. Entropy approximations for simple fluids. Physical Review E, 109(3), p.034130.
 
-    Huang, Y. and Widom, M., 2024. Entropy approximations for simple fluids. Physical Review E, 109(3), p.034130.
+If you are using S2 tools, please cite
 
-    Huang, Y. and Widom, M., 2024. Entropy approximations for simple fluids. Physical Review E, 109(3), p.034130.
+> Huang, Y., Widom, M. and Gao, M.C., 2022. Ab initio free energies of liquid metal alloys: Application to the phase diagrams of Li-Na and K-Na. Physical Review Materials, 6(1), p.013802.
 
